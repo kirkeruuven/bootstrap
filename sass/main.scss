@@ -1,53 +1,56 @@
-// custom variable values
-$primary: #00645f;
-$light: #fbf5e5;
-$zindex-offcanvas:1055;
+// Custom variable values
+$primary: #00645f;        // Dark teal color for primary elements
+$light: #fbf5e5;          // Light color for text and backgrounds
+$zindex-offcanvas: 1055;  // Z-index for offcanvas components
 
+// Custom theme colors
+$custom-theme-colors: (
+  "altlight": #feffea,     // Light background color
+  "altyellow": #ffef01     // Custom yellow color
+);
 
-// Global style or component-specific style
-.offcanvas-title {
-  color: $primary;  // Apply the color to the h5 title
-}
+// Merge custom theme colors with Bootstrap's theme colors
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
-// import the functions & variables
+// Import Bootstrap's SCSS functions and variables
 @import "../node_modules/bootstrap/scss/_functions";
 @import "../node_modules/bootstrap/scss/_variables";
 
-// custom theme colours
-$custom-theme-colors: (
-  "altlight": #feffea,
-  "altyellow": #ffef01
-);
+// Global styles
 
+/* Offcanvas title style */
+.offcanvas-title {
+  color: $primary;  // Apply the primary color to the offcanvas title
+}
+
+/* Image size adjustment for smaller images */
 .smaller-img {
-    width: 80%;  /* Adjust the percentage to control the size */
-  }
-  
+  width: 80%;  // Set width to 80% for smaller images
+}
 
-/* Make navbar title larger */
+/* Navbar title - make it larger */
 .navbar-brand .title-text {
-    font-size: 2rem; // Adjust the font size as needed
-  }
+  font-size: 2rem;  // Adjust font size for the navbar title
+}
 
 /* Center navbar items */
 .navbar-nav {
-    text-align: center; // Center text horizontally
-  }
-  
-  .navbar-nav .nav-item {
-    margin-left: 20px; // Optional: Add spacing between nav items
-  }
-  
-  body {
-    font-family: 'Open Sans', sans-serif;
-  }
-  
-  #intro .btn {
-    margin-top: 30px; /* Space above the button */
-  }
-  
-// merge the maps to add new theme colors
-$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+  text-align: center;  // Center navbar items horizontally
+}
 
-// import bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap'; 
+.navbar-nav .nav-item {
+  margin-left: 20px;  // Add spacing between navbar items
+}
+
+/* Global body styles */
+body {
+  font-family: 'Open Sans', sans-serif;  // Apply custom font to the body
+}
+
+/* Button style for the intro section */
+#intro .btn {
+  margin-top: 30px;  // Add space above the button in the intro section
+}
+
+// Import Bootstrap's SCSS styles
+@import '../node_modules/bootstrap/scss/bootstrap';
