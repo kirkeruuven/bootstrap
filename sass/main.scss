@@ -1,6 +1,13 @@
 // custom variable values
-$primary: #c29938;
+$primary: #00645f;
 $light: #fbf5e5;
+$zindex-offcanvas:1055;
+
+
+// Global style or component-specific style
+.offcanvas-title {
+  color: $primary;  // Apply the color to the h5 title
+}
 
 // import the functions & variables
 @import "../node_modules/bootstrap/scss/_functions";
@@ -8,11 +15,32 @@ $light: #fbf5e5;
 
 // custom theme colours
 $custom-theme-colors: (
-  "altlight": #f2ebfa,
-  "altdark": #522192,
-  "neonyellow": #FFFF00,
+  "altlight": #feffea,
+  "altyellow": #ede71e
 );
 
+/* Make navbar title larger */
+.navbar-brand .title-text {
+    font-size: 2rem; // Adjust the font size as needed
+  }
+
+/* Center navbar items */
+.navbar-nav {
+    text-align: center; // Center text horizontally
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 20px; // Optional: Add spacing between nav items
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  #intro .btn {
+    margin-top: 30px; /* Space above the button */
+  }
+  
 // merge the maps to add new theme colors
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
