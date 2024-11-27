@@ -16,8 +16,13 @@ $zindex-offcanvas:1055;
 // custom theme colours
 $custom-theme-colors: (
   "altlight": #feffea,
-  "altyellow": #ede71e
+  "altyellow": #ffef01
 );
+
+.smaller-img {
+    width: 80%;  /* Adjust the percentage to control the size */
+  }
+  
 
 /* Make navbar title larger */
 .navbar-brand .title-text {
