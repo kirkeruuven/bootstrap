@@ -1,107 +1,53 @@
-// Custom variable values
+// custom variable values
 $primary: #00645f;
 $light: #fbf5e5;
-$zindex-offcanvas: 1055;
+$zindex-offcanvas:1055;
 
-// Custom theme colors (merged with Bootstrap)
+
+// Global style or component-specific style
+.offcanvas-title {
+  color: $primary;  // Apply the color to the h5 title
+}
+
+// import the functions & variables
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+
+// custom theme colours
 $custom-theme-colors: (
   "altlight": #feffea,
-  "altyellow": #ffef01
+  "altyellow": #f1dd00
 );
 
+.smaller-img {
+    width: 80%;  /* Adjust the percentage to control the size */
+  }
+  
+
+/* Make navbar title larger */
+.navbar-brand .title-text {
+    font-size: 2rem; // Adjust the font size as needed
+  }
+
+/* Center navbar items */
+.navbar-nav {
+    text-align: center; // Center text horizontally
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 20px; // Optional: Add spacing between nav items
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  #intro .btn {
+    margin-top: 30px; /* Space above the button */
+  }
+  
+// merge the maps to add new theme colors
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
-// Global Styles
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: $light;
-  color: $primary;
-}
-
-// Navbar Styles
-.navbar {
-  background-color: $altyellow;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
-
-  .navbar-brand {
-    font-size: 1.75rem;
-    .title-text {
-      font-weight: bold;
-      color: $primary;
-    }
-  }
-
-  .navbar-nav {
-    text-align: center;
-
-    .nav-item {
-      margin-left: 1rem;
-      
-      .nav-link {
-        font-size: 1rem;
-        color: $primary;
-        &:hover {
-          color: darken($primary, 10%);
-        }
-      }
-    }
-
-    .btn {
-      background-color: $primary;
-      color: $light;
-      border: none;
-      &:hover {
-        background-color: darken($primary, 10%);
-      }
-    }
-  }
-}
-
-// Hero Section
-#intro {
-  padding: 60px 0;
-  background-color: $light;
-  
-  .display-4 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: $primary;
-  }
-
-  .display-6 {
-    font-size: 2rem;
-    color: $primary;
-  }
-
-  .lead {
-    font-size: 1.25rem;
-    color: darken($primary, 20%);
-    margin-bottom: 1.5rem;
-  }
-
-  .btn-altyellow {
-    background-color: $altyellow;
-    color: $primary;
-    border: none;
-    &:hover {
-      background-color: darken($altyellow, 5%);
-    }
-  }
-}
-
-// Offcanvas Sidebar
-.offcanvas-title {
-  color: $primary;
-}
-
-// Custom Image Style
-.smaller-img {
-  width: 80%;
-  max-width: 400px;
-}
-
-// Miscellaneous
-section {
-  padding: 60px 0;
-}
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap'; 
